@@ -91,9 +91,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portal_db',
-        'USER': 'postgres',
-        'PASSWORD': 'postgresql',
-        'HOST': 'localhost',
+        'USER': 'student_portal',
+        'PASSWORD': 'Q6gBhAB6xgIBtHie29Mz6pajIQrnI7k8',
+        'HOST': 'dpg-d75e806a2pns738rv5eg-a',
         'PORT': '5432',
     }
 }
