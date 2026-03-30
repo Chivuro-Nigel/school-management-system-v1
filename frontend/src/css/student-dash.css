@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.detail-heading {
+  @apply text-[10px] font-bold text-slate-400 uppercase tracking-tighter;
+}
+
+.icon-user {
+  display: inline-block;
+  background-color: currentColor;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>')
+    no-repeat center;
+  mask-size: 100%;
+}
+
+.detail-heading {
+  @apply text-slate-400;
+}

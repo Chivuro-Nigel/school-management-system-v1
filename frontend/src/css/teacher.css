@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+.icon-teacher {
+  display: inline-block;
+  background-color: currentColor;
+  /* Use -webkit-mask for Chrome/Safari support */
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  /* The URL needs to be exactly like this */
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>');
+}
+
+.label {
+  @apply text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 ml-1;
+}
+.select {
+  @apply bg-slate-700 text-slate-100 border border-slate-600 p-2.5 rounded-lg min-w-45 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all cursor-pointer hover:bg-slate-600;
+}
+.option {
+  @apply flex flex-col;
+}

@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+.logout-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: currentColor; /* Allows you to change icon color using Tailwind text classes */
+
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/></svg>')
+    no-repeat center;
+  mask-size: contain;
+}
+
+.user-profile-icon {
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24%2024' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='5'/%3E%3Cpath d='M20 21a8 8 0 0 0-16 0'/%3E%3C/svg%3E")
+    no-repeat center;
+  mask-size: 60%;
+  background-color: #64748b;
+}
+
+.notification-default-icon {
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.268 21a2 2 0 0 0 3.464 0'/%3E%3Cpath d='M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326'/%3E%3C/svg%3E")
+    no-repeat center;
+  mask-size: 60%;
+  background-color: #64748b;
+  display: inline-block;
+}
+
+.icons {
+  @apply h-10 w-10 bg-slate-800 rounded-full flex justify-center items-center transition-all  hover:bg-blue-600 cursor-pointer;
+}

@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@theme {
+  --background-image-login: url("../images/login-background.jpg");
+}
+
+.login-page-container {
+  background-image: var(--background-image-login);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
+  min-height: screen;
+  width: 100%;
+}
