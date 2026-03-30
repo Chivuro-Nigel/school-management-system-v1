@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import dj_database_url
 
 from datetime import timedelta
 
@@ -22,7 +23,7 @@ SECRET_KEY = 'django-insecure-=a_so#dp+z008j9oq&qb%51higb0wdwe9is=7%(pc+k^3_19#b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -88,14 +89,10 @@ WSGI_APPLICATION = 'AUTH.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portal_db',
-        'USER': 'student_portal',
-        'PASSWORD': 'Q6gBhAB6xgIBtHie29Mz6pajIQrnI7k8',
-        'HOST': 'dpg-d75e806a2pns738rv5eg-a',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://student_portal:Q6gBhAB6xgIBtHie29Mz6pajIQrnI7k8@dpg-d75e806a2pns738rv5eg-a:5432/portal_db',
+        conn_max_age=600
+    )
 }
 
 
@@ -155,3 +152,4 @@ SIMPLE_JWT = {
     'USER_ID_CLAIM': 'user_id',
 }
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
