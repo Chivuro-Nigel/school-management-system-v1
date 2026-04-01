@@ -4,6 +4,16 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../components/AuthContext";
 
+interface LoginResponse {
+  access: string;
+  refresh: string;
+  user_id: string;
+  role: string;
+  first_name: string;
+  last_name: string;
+  has_changed_password: boolean;
+}
+
 function Login() {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
@@ -12,20 +22,11 @@ function Login() {
   const { login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    interface LoginResponse {
-      access: string;
-      refresh: string;
-      user_id: string;
-      role: string;
-      first_name: string;
-      last_name: string;
-      has_changed_password: boolean;
-    }
     e.preventDefault();
     setError("");
 
     try {
-      const response = await axios.post(
+      const response = await axios.post<LoginResponse>(
         `${import.meta.env.VITE_API_URL}/api/accounts/login/`,
         {
           user_id: userId,
