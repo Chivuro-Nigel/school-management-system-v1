@@ -1,7 +1,10 @@
 import axios from "axios";
 
+// This pulls the URL from Vercel/Local .env and adds the /api/ suffix
+const BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/api/",
+  baseURL: `${BASE_URL}/api/`,
 });
 
 // Attach access token to every request
@@ -25,22 +28,17 @@ api.interceptors.response.use(
 
       if (refreshToken) {
         try {
-          const res = await axios.post(
-            "http://127.0.0.1:8000/api/token/refresh/",
-            {
-              refresh: refreshToken,
-            },
-          );
+          // Use the dynamic BASE_URL here too!
+          const res = await axios.post(`${BASE_URL}/api/token/refresh/`, {
+            refresh: refreshToken,
+          });
 
           if (res.status === 200) {
             const newAccess = res.data.access;
             localStorage.setItem("access_token", newAccess);
 
-            // 1. Update defaults for future requests
             api.defaults.headers.common["Authorization"] =
               `Bearer ${newAccess}`;
-
-            // 2. CRITICAL: Update the header for the CURRENT request we are about to retry
             originalRequest.headers["Authorization"] = `Bearer ${newAccess}`;
 
             return api(originalRequest);

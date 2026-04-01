@@ -13,7 +13,7 @@ const StudentDash = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("access_token");
-    const refreshToken = localStorage.getItem("refresh_token");
+
     const storedUser = localStorage.getItem("user");
 
     // 1. Kick out unauthenticated users
