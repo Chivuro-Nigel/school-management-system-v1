@@ -141,7 +141,8 @@ STATIC_URL = 'static/'
 AUTH_USER_MODEL = 'ACCOUNTS.Users'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://school-management-system-v1-git-main-chivuro-nigels-projects.vercel.app/",
 ]
 
 SIMPLE_JWT = {
