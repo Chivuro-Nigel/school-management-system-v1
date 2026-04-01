@@ -26,6 +26,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    "https://school-management-system-v1-blue.vercel.app",
     "https://school-management-system-v1-git-main-chivuro-nigels-projects.vercel.app",
 ]
 
