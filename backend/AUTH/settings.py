@@ -141,7 +141,7 @@ STATIC_URL = 'static/'
 AUTH_USER_MODEL = 'ACCOUNTS.Users'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "http://localhost:5173"
 ]
 
 SIMPLE_JWT = {
