@@ -4,7 +4,11 @@ from .settings import *
 from .settings import BASE_DIR
 
 ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
-CSRF_TRUSTED_ORIGINS = ['HTTPS://'+os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://' + os.environ.get('RENDER_EXTERNAL_HOSTNAME'),
+    'https://school-management-system-v1-git-main-chivuro-nigels-projects.vercel.app'
+]
 
 DEBUG = False
 SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -22,7 +26,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://school-management-system-v1-git-main-chivuro-nigels-projects.vercel.app/",
+    "https://school-management-system-v1-git-main-chivuro-nigels-projects.vercel.app",
 ]
 
 STORAGES = {
