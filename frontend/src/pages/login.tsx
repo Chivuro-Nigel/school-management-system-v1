@@ -25,8 +25,8 @@ function Login() {
     setError("");
 
     try {
-      const response = await axios.post<LoginResponse>(
-        "http://127.0.0.1:8000/api/accounts/login/",
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/accounts/login/`,
         {
           user_id: userId,
           password: password,
