@@ -22,7 +22,7 @@ const SetUpPassword = () => {
     try {
       const token = localStorage.getItem("access_token");
       await axios.post(
-        "http://127.0.0.1:8000/api/accounts/complete-setup/",
+        `${import.meta.env.VITE_API_URL}/api/accounts/complete-setup/`,
         { password },
         { headers: { Authorization: `Bearer ${token}` } },
       );
@@ -46,7 +46,6 @@ const SetUpPassword = () => {
 
       // 2. Send them to the dashboard
       alert("Password updated successfully!");
-      navigate("/admin-dash");
     } catch (err) {
       const axiosError = err as AxiosError<{
         error?: string;
